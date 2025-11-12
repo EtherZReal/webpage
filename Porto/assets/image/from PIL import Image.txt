@@ -1,0 +1,9 @@
+from PIL import Image
+import numpy as np
+
+img = Image.open("zip.png").convert("1")  # Convert to black & white
+pixels = np.array(img)
+
+binary_string = ''.join(['1' if pixel == 0 else '0' for row in pixels for pixel in row])
+print(binary_string)
+
